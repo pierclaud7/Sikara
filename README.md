@@ -1,8 +1,8 @@
 # Sikara
 
-Ce répertoire est dédié aux exercices à faire avec M. Girard
+This directory is dedicated to exercises to be done with M. Girard
 
-Les différents exercices sont dans une branche dédiée :
+The various exercises are in a dedicated branch :
 
-- Exercice 1 (JCVD): (https://github.com/pierclaud7/Learning-Sikara/tree/Exercice-1)
-- Exercice 2 (Positionnement): (https://github.com/pierclaud7/Learning-Sikara/tree/Exercice-2)
+- Exercise 1 (JCVD): (https://github.com/pierclaud7/Sikara/tree/Exercice-1)
+- Exercise 2 (Positioning): (https://github.com/pierclaud7/Sikara/tree/Exercice-2)
