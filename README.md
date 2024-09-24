@@ -1,7 +1,6 @@
-# Sikara
+# Grid
 
-This directory is dedicated to the exercises to do and return given by M. Girard.
+Reproduce Mondrian's painting
 
-The different exercises : 
-- Exercise-1 (JCVD): https://github.com/pierclaud7/Sikara/tree/Exercise-1
-- Exercise-2 (Positioning): https://github.com/pierclaud7/Sikara/tree/Exercise-2
+<img src="http://superadmin.sikara.fr/uploads/D-css-display-mondrian.PNG" alt="Metaverse" width="1000" />
+
