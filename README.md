@@ -1,4 +1,4 @@
-# Learning-Sikara
+# Sikara
 
 Ce répertoire est dédié aux exercices à faire avec M. Girard
 
