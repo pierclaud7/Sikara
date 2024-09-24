@@ -1,8 +1,3 @@
-# Sikara
-
-This directory is dedicated to exercises to be done with M. Girard
-
-The various exercises are in a dedicated branch :
-
-- Exercise 1 (JCVD): (https://github.com/pierclaud7/Sikara/tree/Exercise-1)
-- Exercise 2 (Positioning): (https://github.com/pierclaud7/Sikara/tree/Exercise-2)
+# JCVD
+- Reproduce the image on the slide on a single page
+<img src="http://superadmin.sikara.fr/uploads/004jcvdexercice.PNG" alt="Metaverse" width="1000" />
