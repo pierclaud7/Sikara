@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: grid;
+    width: 900px;
+    height: 630px;
+    grid-gap: 1px;
+    background-color: black;
+    padding: 5px;
+
+    grid-template-areas:
+        "w1 w1 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w2 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w3 w4 w4 y1 y1"
+        "w1 w1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 w5 w5 w5 w5 w5 b2 b2 b2 b2 b2 b2 b2 b2 b2 w4 w4 y1 y1"
+        "w1 w1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 w5 w5 w5 w5 w5 b2 b2 b2 b2 b2 b2 b2 b2 b2 w4 w4 y1 y1"
+        "w1 w1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 b1 w5 w5 w5 w5 w5 b2 b2 b2 b2 b2 b2 b2 b2 b2 w4 w4 y1 y1"
+        ".  .  w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 y2 o1 o1 o1 o1 o1 o1 o1 o2 o2 w4 w4 y1 y1"
+        ".  .  w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 y2 o1 o1 o1 o1 o1 o1 o1 o2 o2 w4 w4 y1 y1"
+        ".  .  w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 y2 o1 o1 o1 o1 o1 o1 o1 o2 o2 w4 w4 y1 y1"
+        ".  .  w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 y2 o1 o1 o1 o1 o1 o1 o1 o2 o2 w4 w4 y1 y1"
+        ".  .  w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 y2 o1 o1 o1 o1 o1 o1 o1 o2 o2 w4 w4 y1 y1"
+        ".  .  w6 w6 w6 w6 .  .  w7 w7 w7 w7 w8 w8 y2 y2 y2 y2 y2 o1 o1 o1 o1 o1 o1 o1 o2 o2 w4 w4 y1 y1"
+        ".  .  w6 w6 w6 w6 .  .  y3 y3 o3 o3 o3 o3 b3 b3 b3 b3 b3 w9 w9 w9 w9 w9 w9 w9 z1 z1 .  .  .  . "
+        ".  .  w6 w6 w6 w6 .  .  y3 y3 o3 o3 o3 o3 b3 b3 b3 b3 b3 w9 w9 w9 w9 w9 w9 w9 z1 z1 .  .  .  . "
+        ".  .  w6 w6 w6 w6 .  .  y3 y3 o3 o3 o3 o3 b3 b3 b3 b3 b3 w9 w9 w9 w9 w9 w9 w9 z1 z1 .  .  .  . "
+        "z2 z2 o4 o4 o4 o4 .  .  y4 y4 z3 z3 z3 z3 z3 z3 z3 z4 z4 z4 z4 z4 z4 b4 b4 b4 y5 y5 z5 z5 z5 z5"
+        "z2 z2 o4 o4 o4 o4 .  .  y4 y4 z3 z3 z3 z3 z3 z3 z3 z4 z4 z4 z4 z4 z4 b4 b4 b4 y5 y5 z5 z5 z5 z5"
+        "z2 z2 o4 o4 o4 o4 .  .  y4 y4 z3 z3 z3 z3 z3 z3 z3 z4 z4 z4 z4 z4 z4 b4 b4 b4 y5 y5 z5 z5 z5 z5"
+        "z2 z2 o4 o4 o4 o4 .  .  y4 y4 z3 z3 z3 z3 z3 z3 z3 z4 z4 z4 z4 z4 z4 b4 b4 b4 y5 y5 z5 z5 z5 z5"
+        "z2 z2 o4 o4 o4 o4 .  .  y4 y4 z3 z3 z3 z3 z3 z3 z3 z4 z4 z4 z4 z4 z4 b4 b4 b4 y5 y5 z5 z5 z5 z5"
+        "z2 z2 o4 o4 o4 o4 .  .  y4 y4 o5 o5 o5 o5 .  .  .  .  .  .  .  .  .  z6 z6 z6 z6 z6 z6 z6 z6 z6"
+        "z2 z2 o4 o4 o4 o4 .  .  y4 y4 o5 o5 o5 o5 .  .  .  .  .  .  .  .  .  z6 z6 z6 z6 z6 z6 z6 z6 z6"
+        "z7 z7 z7 z7 z7 z7 z7 z7 y4 y4 o5 o5 o5 o5 .  .  .  .  .  .  .  .  .  z6 z6 z6 z6 z6 z6 z6 z6 z6"
+        "z7 z7 z7 z7 z7 z7 z7 z7 y4 y4 o5 o5 o5 o5 .  .  .  .  .  .  .  .  .  z6 z6 z6 z6 z6 z6 z6 z6 z6";
+}
+
+
+
+.grid-container div {
+    border: 3px solid black;
+}
+
+#white1, #white2, #white3, #white4, #white5, #white6, #white7, #white8, #white9, #white10, #white11, #white12, #white13, #white14, #white15, #white16
+{
+    background: white;
+}
+
+#blue1, #blue2, #blue3, #blue4
+{
+    background: midnightblue;
+}
+
+#yellow1, #yellow2, #yellow3, #yellow4, #yellow5
+{
+    background: yellow;
+}
+
+#red1, #red2, #red3, #red4, #red5
+{
+    background: red;
+}
+
+#white1
+{
+    grid-area: w1;
+}
+
+#white2
+{
+    grid-area: w2;
+}
+
+#white3
+{
+    grid-area: w3;
+}
+
+#white4
+{
+    grid-area: w4;
+}
+
+#white5
+{
+    grid-area: w5;
+}
+
+#white6
+{
+    grid-area: w6;
+}
+
+#white7
+{
+    grid-area: w7;
+}
+
+#white8
+{
+    grid-area: w8;
+}
+
+#white9
+{
+    grid-area: w9;
+}
+
+#white10
+{
+    grid-area: z1;
+}
+
+#white11
+{
+    grid-area: z2;
+}
+
+#white12
+{
+    grid-area: z3;
+}
+
+#white13
+{
+    grid-area: z4;
+}
+
+#white14
+{
+    grid-area: z5;
+}
+
+#white15
+{
+    grid-area: z6;
+}
+
+#white16
+{
+    grid-area: z7;
+}
+
+#blue1
+{
+    grid-area: b1;
+}
+
+#blue2
+{
+    grid-area: b2;
+}
+
+#blue3
+{
+    grid-area: b3;
+}
+
+#blue4
+{
+    grid-area: b4;
+}
+
+#yellow1
+{
+    grid-area: y1;
+}
+
+#yellow2
+{
+    grid-area: y2;
+}
+
+#yellow3
+{
+    grid-area: y3;
+}
+
+#yellow4
+{
+    grid-area: y4;
+}
+
+#yellow5
+{
+    grid-area: y5;
+}
+
+#red1
+{
+    grid-area: o1;
+}
+
+#red2
+{
+    grid-area: o2;
+}
+
+#red3
+{
+    grid-area: o3;
+}
+
+#red4
+{
+    grid-area: o4;
+}
+
+#red5
+{
+    grid-area: o5;
+}
