@@ -1,21 +1,27 @@
 /* Style général de la page */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin: 0;
 }
 
 /* Conteneur principal */
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 colonnes égales */
+  grid-gap: 20px;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  /* Centre horizontalement les boîtes dans le conteneur */
+  align-items: center;
+  /* Centre verticalement les boîtes */
   max-width: 1200px;
+  /* Ajuste la largeur maximale pour garder les boîtes centrées */
+  margin: 0 auto;
+  /* Centre le conteneur sur la page */
+  padding: 20px;
 }
 
 /* Style des boîtes contenant chaque animation */
@@ -23,9 +29,10 @@ body {
   background-color: #d3d3d3;
   border-radius: 15px;
   padding: 20px;
-  width: 300px;
+  width: 400px;
+  height: 400px;
   text-align: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;
 }
 
 /* Espacement sous les titres */
@@ -40,7 +47,7 @@ h2 {
   height: 100px;
   background-color: red;
   position: relative;
-  animation: rotateSquare 4s infinite, changeColor 4s infinite;
+  animation: rotateSquare 8s infinite, changeColor 8s infinite;
   margin: 0 auto;
 }
 
@@ -49,8 +56,12 @@ h2 {
     transform: rotate(0deg);
   }
 
-  100% {
+  50% {
     transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
   }
 }
 
@@ -62,7 +73,7 @@ h2 {
   }
 
   50% {
-    background-color: blue;
+    background-color: yellow;
   }
 }
 
@@ -96,24 +107,54 @@ h2 {
   }
 }
 
-/* Loader */
+/* Conteneur pour le loader */
 .loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
-  animation: spin 2s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  /* Espace entre les cercles */
 }
 
-@keyframes spin {
+/* Style des cercles du loader */
+.loader-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: black;
+  /* Couleur initiale */
+  animation: colorShift 1.5s infinite;
+}
+
+/* Les cercles doivent avoir des décalages dans l'animation */
+.loader-circle:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loader-circle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.loader-circle:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* Animation pour le changement de couleur cyclique */
+@keyframes colorShift {
   0% {
-    transform: rotate(0deg);
+    background-color: black;
+  }
+
+  33% {
+    background-color: gray;
+  }
+
+  66% {
+    background-color: white;
   }
 
   100% {
-    transform: rotate(360deg);
+    background-color: black;
   }
 }
 
