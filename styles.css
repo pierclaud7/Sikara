@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Baskerville Old Face", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: red;
+}
+
+nav h2 {
+    text-align: center;
+    color: black;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul li a {
+    display: block;
+    border: 1px solid black;
+    color: black;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+aside {
+    font-size: 15px;
+    flex-basis: 170%;
+    padding: 10px;
+}
+
+aside.left {
+    background-color: yellow;
+}
+
+aside.right {
+    background-color: purple;
+}
+
+main {
+    display: flex;
+    background-color: skyblue;
+}
+
+main section {
+    flex: 1;
+    padding: 10px;
+    border: 2px dotted white;
+}
+
+footer {
+    font-size: 20px;
+    background-color: lightgreen;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
