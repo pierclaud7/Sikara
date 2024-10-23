@@ -1,113 +1,128 @@
-/* Style général de la page */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+  font-family: 'Arial', sans-serif; /* Applique la police 'Arial' au corps de la page */
+  background-color: skyblue; /* Définit la couleur d'arrière-plan bleu ciel */
 }
 
-/* Conteneur principal */
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* 2 colonnes égales */
-  grid-gap: 20px;
-  justify-content: center;
-  /* Centre horizontalement les boîtes dans le conteneur */
-  align-items: center;
-  /* Centre verticalement les boîtes */
-  max-width: 1200px;
-  /* Ajuste la largeur maximale pour garder les boîtes centrées */
-  margin: 0 auto;
-  /* Centre le conteneur sur la page */
-  padding: 20px;
-}
-
-/* Style des boîtes contenant chaque animation */
-.box {
-  background-color: #d3d3d3;
-  border-radius: 15px;
-  padding: 20px;
-  width: 400px;
-  height: 400px;
-  text-align: center;
-  display: grid;
-}
-
-/* Espacement sous les titres */
 h2 {
-  margin-bottom: 20px;
-  font-size: 18px;
+  margin-bottom: 50px; /* Ajoute un espace de 50 pixels en dessous de chaque titre <h2> */
 }
 
-/* Carré qui tourne en changeant de couleur */
+article {
+  text-align: center; /* Centre le texte à l'intérieur de l'élément article */
+  margin: 20px; /* Définit une marge interne de 20 pixels pour le texte */
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px; /* Définit un espace entre les colonnes */
+  padding: 10px;
+  
+}
+
+section {
+  background-color: gray; /* Applique un fond gris */
+  padding: 10px; /* Définit un rembourrage interne de 20 pixels */
+  border-radius: 30px; /* Définit des coins arrondis de 30 pixels */
+  margin: 20px auto; /* Centre l'élément section avec une marge automatique */
+  width: 60%; /* Définit une largeur de 60% */
+}
+
+.menu {
+  position: absolute; /* Positionne le menu de manière absolue par rapport à son parent ou à la fenêtre */
+  top: 30px; /* Distance entre le haut du conteneur parent et le menu */
+  left: 20px; /* Distance entre le côté gauche du conteneur parent et le menu */
+  width: 75px; /* Largeur du menu */
+  height: 55px; /* Hauteur initiale du menu */
+  background-color: black; /* Définit la couleur de fond du menu en noir */
+  color: white; /* Définit la couleur du texte en blanc */
+  border-radius: 35px; /* Arrondit les coins du menu */
+  transition: height 2s ease; /* Anime le changement de hauteur sur 2 secondes de façon fluide */
+  overflow: hidden; /* Cache le contenu qui déborde lorsque le menu est déroulé */
+  cursor: pointer; /* Change le curseur en pointeur pour indiquer que c'est cliquable */
+}
+
+.menu:hover {
+  height: 650px; /* Augmente la hauteur à 650px lorsque le menu est survolé */
+}
+
 .square {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  position: relative;
+  width: 100px; /* Définit une largeur de 60% */
+  height: 100px; /* Définit une hauteur de 100px */
+  background-color: red; /* Définit une couleur de fond rouge */ 
+  margin: 20px auto; /* Positionne le carré au centre de son parent */
   animation: rotateSquare 8s infinite, changeColor 8s infinite;
-  margin: 0 auto;
+  /* Applique deux animations : 
+     - rotateSquare : pour la rotation du carré
+     - changeColor : pour changer la couleur du carré 
+     Les deux animations durent 8 secondes et se répètent indéfiniment */
 }
 
+/* Définition de l'animation rotateSquare qui fait tourner le carré */
 @keyframes rotateSquare {
+  
+  /* À 0% (début de l'animation), le carré n'est pas tourné */
   0% {
     transform: rotate(0deg);
   }
 
+  /* À 50% (au milieu de l'animation), le carré est tourné de 360 degrés */
   50% {
-    transform: rotate(360deg);
+    transform: rotate(580deg);
   }
 
+  /* À 100% (à la fin de l'animation), le carré revient à sa position initiale (0 degré de rotation) */
   100% {
     transform: rotate(0deg);
   }
 }
 
+/* Définition de l'animation changeColor qui fait changer la couleur du carré */
 @keyframes changeColor {
-
-  0%,
-  100% {
+  
+  /* À 0% et 100% (début et fin de l'animation), le carré est rouge */
+  0%, 100% {
     background-color: red;
   }
 
+  /* À 50% (au milieu de l'animation), le carré devient jaune */
   50% {
     background-color: yellow;
   }
 }
 
-/* Balle qui rebondit */
+/* Styles pour le tube et la balle */
+.tube {
+  width: 30px;
+  height: 200px;
+  margin: 20px auto;
+  position: relative;
+  border: 2px solid green;
+  overflow: hidden; /* Pour s'assurer que la balle reste dans le tube */
+}
+
 .ball {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: green;
   border-radius: 50%;
-  position: relative;
-  animation: bounce 3s ease-out infinite;
-  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  animation: bounce 3s ease-in-out infinite; 
 }
 
 @keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    top: 0;
+  0%, 50%, 80%, 100% {
+    bottom: 0; /* La balle touche le bas */
   }
-
-  40% {
-    top: 150px;
+  20% {
+    bottom: 170px; /* La balle atteint presque le haut */
   }
-
   60% {
-    top: 75px;
+    bottom: 100px; /* Deuxième rebond plus bas */
+  }
+  90% {
+    bottom: 40px; /* Troisième rebond encore plus bas */
   }
 }
 
-/* Conteneur pour le loader */
 .loader {
   display: flex;
   justify-content: center;
@@ -139,28 +154,5 @@ h2 {
   animation-delay: 1s;
 }
 
-/* Animation pour le changement de couleur cyclique */
-@keyframes colorShift {
-  0% {
-    background-color: black;
-  }
 
-  33% {
-    background-color: gray;
-  }
 
-  66% {
-    background-color: white;
-  }
-
-  100% {
-    background-color: black;
-  }
-}
-
-/* Ajout d'espacement autour des animations */
-.queue,
-.animation3D {
-  height: 200px;
-  /* Placeholder pour ajouter les animations "Faire la queue" et "Animation 3D" */
-}

@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+<!-- Déclaration du type de document comme étant du HTML5, et l'attribut "lang" spécifie que la langue du document est le français. -->
 <head>
+  <!-- Définition de l'encodage des caractères en UTF-8 pour prendre en charge presque tous les caractères -->
   <meta charset="UTF-8">
+  <!-- Définition des paramètres du viewport pour une mise en page responsive adaptée aux différents types d'écrans -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Titre de la page affiché dans l'onglet du navigateur -->
   <title>Animations CSS 3</title>
+  <!-- Lien vers le fichier CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <!-- Début du corps de la page, contenant tout le contenu visible par l'utilisateur -->
 
-  <div class="container">
-    <div class="box">
+  <article>
+    <!-- Balise <article> utilisée pour contenir un contenu autonome, ici elle englobe toutes les animations CSS -->
+
+      <div class="menu">
+        <h3>Test</h3>
+      </div>
+
+    <section>
+      <!-- Première section dédiée à l'animation du carré qui tourne -->
+
       <h2>Carré qui tourne</h2>
-      <div class="square"></div>
-    </div>
+      <!-- Sous-titre de cette section indiquant que cette partie concerne un carré qui tourne -->
 
-    <div class="box">
-      <h2>Balle qui rebondit</h2>
-      <div class="ball"></div>
-    </div>
+      <div class="square">
+        <!-- Un élément <div> qui représentera un carré animé avec la classe CSS "square" appliquée. Les styles de ce div sont définis dans le fichier CSS. -->
+        <!-- Contenu pour le carré qui tourne (commentaire pour les développeurs, ignoré par le navigateur) -->
+      </div>
 
-    <div class="box">
+    </section>
+
+    <section>
+      <!-- Deuxième section dédiée à l'animation de la balle qui rebondit -->
+
+      <h2>Balle qui rebondit dans un tube</h2>
+      <!-- Sous-titre de cette section indiquant que cette partie concerne une balle qui rebondit -->
+
+      <div class="tube">
+        <!-- Conteneur pour le tube -->
+        <div class="ball"></div>
+        <!-- Balle à l'intérieur du tube -->
+      </div>
+
+    </section>
+
+    <section>
+      <!-- Section dédiée au Loader -->
+
       <h2>Loader</h2>
+          <!-- Sous-titre de cette section indiquant que cette partie concerne un loader -->
+
       <div class="loader">
         <div class="loader-circle"></div>
         <div class="loader-circle"></div>
         <div class="loader-circle"></div>
       </div>
-    </div>
 
-    <div class="box">
-      <h2>Faire la queue</h2>
-      <div class="queue">
-        <!-- Contenu pour l'animation "Faire la queue" -->
-      </div>
-    </div>
+    </section>
 
-    <div class="box">
-      <h2>Animation 3D</h2>
-      <div class="animation3D">
-        <!-- Contenu pour l'animation 3D -->
-      </div>
-    </div>
-  </div>
+  </article>
+  <!-- Fin de l'article contenant les sections avec les différentes animations -->
 
 </body>
-
+<!-- Fin du corps de la page -->
 </html>
+<!-- Fin du document HTML -->
