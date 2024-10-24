@@ -99,7 +99,7 @@ section {
   border-radius: 50%;
   background-color: green;
   position: absolute;
-  animation: Bounce 3s ease-in-out infinite;
+  animation: Bounce 1.8s ease-in-out infinite;
 }
 
 @keyframes Bounce {
@@ -137,35 +137,58 @@ section {
   50% { background-color: black; } /* La couleur devient blanche au milieu de l'animation */
 }
 
-
-/*--- *  Small Squares Animation Section  * --- */
 .square-animation {
   position: relative;
+  width: 400px;
+  height: 250px;
+  background-color: #d3d3d3;
+  border-radius: 10px;
+  margin: 0 auto;
 }
 
 .square-animation div {
   position: absolute;
-  animation-name: square-move, square-rotation, color-change-animation;
-  animation-duration: 15s, 2s, 7s;
-  animation-iteration-count: infinite;
-  top: 0;
-  left: 0;
-  color: red;
-  transition: color 4s;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  animation: square-move 8s infinite linear, square-rotation 2s infinite linear;
 }
 
-.small-square1 { background-color: dark; width: 20px; height: 20px; animation-delay: 1s; }
-.small-square2 { background-color: green; width: 20px; height: 20px; animation-delay: 2s; }
-.small-square3 { background-color: pink; width: 20px; height: 20px; animation-delay: 3s; }
-.small-square4 { background-color: purple; width: 20px; height: 20px; animation-delay: 4s; }
-.small-square5 { background-color: yellow; width: 20px; height: 20px; animation-delay: 5s; }
+.small-square1 {
+  background-color: orange;
+  animation-delay: 0s;
+}
 
+/* Animation pour le déplacement des carrés */
 @keyframes square-move {
-  0%, 100% { top: 0; left: 0; }
-  8% { left: 96%; }
-  50% { top: 89%; left: 96%; }
-  75% { top: 92%; left: 0; }
+  0%, 100% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 95%;
+  }
+  50% {
+    top: 88%;
+    left: 95%;
+  }
+  75% {
+    top: 88%;
+    left: 0;
+  }
 }
+
+/* Animation de rotation des carrés */
+@keyframes square-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 #circle-animation {
   height: 455px;
