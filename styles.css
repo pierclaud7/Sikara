@@ -145,20 +145,22 @@ section {
 
 .square-animation div {
   position: absolute;
-  animation-name: square-move-animation, square-rotation, color-change-animation;
+  animation-name: square-move, square-rotation, color-change-animation;
   animation-duration: 15s, 2s, 7s;
   animation-iteration-count: infinite;
   top: 0;
   left: 0;
+  color: red;
+  transition: color 4s;
 }
 
-.small-square1 { background-color: #d42b4d; width: 20px; height: 20px; animation-delay: 1s; }
-.small-square2 { background-color: #FFD43B; width: 20px; height: 20px; animation-delay: 2s; }
-.small-square3 { background-color: darkgreen; width: 20px; height: 20px; animation-delay: 3s; }
-.small-square4 { background-color: violet; width: 20px; height: 20px; animation-delay: 4s; }
-.small-square5 { background-color: #974e2b; width: 20px; height: 20px; animation-delay: 5s; }
+.small-square1 { background-color: dark; width: 20px; height: 20px; animation-delay: 1s; }
+.small-square2 { background-color: green; width: 20px; height: 20px; animation-delay: 2s; }
+.small-square3 { background-color: pink; width: 20px; height: 20px; animation-delay: 3s; }
+.small-square4 { background-color: purple; width: 20px; height: 20px; animation-delay: 4s; }
+.small-square5 { background-color: yellow; width: 20px; height: 20px; animation-delay: 5s; }
 
-@keyframes square-move-animation {
+@keyframes square-move {
   0%, 100% { top: 0; left: 0; }
   8% { left: 96%; }
   50% { top: 89%; left: 96%; }
