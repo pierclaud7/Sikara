@@ -7,20 +7,19 @@
 
 body {
   font-family: Arial, sans-serif;
+  background-color: #333;
   color: #333;
-  background-color: #f0f4f8;
+  text-align: center;
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #444;
-  color: #fff;
+  background-color: #4a90e2;
+  color: #333;
   padding: 1rem;
-  text-align: center;
   font-size: 1.5rem;
   display: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Afficher le header uniquement au-dessus de 800px */
@@ -30,75 +29,108 @@ header {
   }
 }
 
-/* Mise en page des containers texte */
+/* Containers texte */
 main {
   padding: 1rem;
-  text-align: center;
 }
 
 .text-container {
-  padding: 1.5rem;
-  border: 1px solid #ddd;
   background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
   margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
   display: inline-block;
   box-sizing: border-box;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  width: 100%; /* Par défaut, chaque container occupe toute la largeur */
-  vertical-align: top; /* Aligne les conteneurs en haut */
+  transition: background-color 0.3s ease;
 }
 
-.text-container:hover {
-  transform: scale(1.02);
+/* Couleurs de fond pour chaque section */
+.text-container:nth-child(1) {
+  background-color: #2ecc71;
+}
+
+.text-container:nth-child(2) {
+  background-color: #f1c40f;
+}
+
+.text-container:nth-child(3) {
+  background-color: #e74c3c;
 }
 
 /* Affichage en colonnes au-dessus de 640px */
 @media (min-width: 640px) {
   .text-container {
-    width: 32%; /* Ajuste la largeur pour que les trois éléments remplissent 100% */
-    margin-right: 1%; /* Marge droite pour un espacement uniforme */
+    width: 30%;
+    margin-right: 1.5%;
   }
   .text-container:nth-child(3) {
-    margin-right: 0; /* Enlève la marge droite du dernier élément pour un alignement parfait */
+    margin-right: 0;
   }
 }
 
-/* Centrage et style du bouton */
+/* Centrage et style des boutons */
 .button-container {
   text-align: center;
   padding: 1rem;
-  margin-top: auto;
+}
+
+.button-container a {
+  text-decoration: none;
+  margin: 0 0.5rem; /* Espace entre les boutons */
 }
 
 .button-container button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #4a90e2;
+  color: #333;
   border: none;
-  padding: 0.7rem 1.5rem;
+  padding: 0.8rem 1.6rem;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .button-container button:hover {
-  background-color: #0056b3;
+  background-color: #357ab8;
 }
+
 
 /* Footer visible uniquement à l'impression */
 footer {
   display: none;
 }
 
-/* Afficher le footer seulement à l'impression */
 @media print {
+
+  body, .text-container, header, footer {
+    background: inherit !important;
+    color: inherit !important;
+    -webkit-print-color-adjust: exact; /* Chrome, Safari */
+  }
+
+  .text-container {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  header {
+    display: block !important;
+  }
+
   footer {
     display: block;
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
     color: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f4f8;
   }
 }
