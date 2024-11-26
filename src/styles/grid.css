@@ -1,0 +1,134 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+    background-color: #fff;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  /* En-tête */
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+  
+  header .logo {
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Navigation */
+  .nav {
+    margin-bottom: 30px;
+  }
+  
+  .nav button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .nav button:hover {
+    background-color: #e9e9e9;
+  }
+  
+  /* Introduction */
+  .intro h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .intro p {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+  
+  /* Articles */
+  .articles h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between; /* Égalise l'espacement entre colonnes */
+    gap: 20px; /* Espacement constant */
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  .col {
+    flex: 1 1 calc(33.333% - 20px); /* Largeur d'une colonne avec marge */
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
+  }
+  
+  article {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  article img {
+    display: block;
+    margin: 0 auto 15px;
+    width: 80px;
+    height: auto;
+  }
+  
+  article p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    text-align: justify; /* Pour un rendu élégant */
+  }
+  
+  /* Pied de page */
+  footer {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 900px) {
+    .col {
+      flex: 1 1 calc(50% - 20px); /* Deux colonnes par ligne */
+      max-width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .col {
+      flex: 1 1 100%; /* Une seule colonne */
+      max-width: 100%;
+    }
+  }
+  
